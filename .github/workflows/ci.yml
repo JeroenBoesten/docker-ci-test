@@ -23,7 +23,7 @@ jobs:
             ARG_RUBY_VERSION=${{ env.RUBY_VERSION }}
           context: .
           file: devops/php-fpm/Dockerfile
-          tags: ${{ github.head_ref }}-php-fpm
+          tags: php-fpm:latest
           outputs: type=docker,dest=/tmp/php-fpm.tar
 
       - name: Upload docker image
