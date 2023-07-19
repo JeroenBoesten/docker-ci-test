@@ -47,7 +47,7 @@ jobs:
           path: /tmp/php-fpm.tar
 
       - name: Load docker image
-        run: docker load -i php-fpm.tar
+        run: docker load -i /tmp/php-fpm.tar
 
       - name: Run PHPUnit
         run: |
