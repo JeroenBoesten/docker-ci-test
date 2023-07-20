@@ -3,6 +3,7 @@ services:
     build:
       context: ../
       dockerfile: devops/php-fpm/Dockerfile
+      target: dev
     expose:
       - 9000
     volumes:
