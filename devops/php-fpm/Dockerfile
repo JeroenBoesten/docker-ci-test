@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-fpm-alpine AS dev
 
 WORKDIR /var/www
 
@@ -40,4 +40,6 @@ RUN composer dump-autoload --optimize
 # Set the appropriate permissions for Laravel directories
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
+FROM dev
 
+RUN composer install --no-dev --optimize-autoloader

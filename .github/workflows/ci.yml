@@ -19,10 +19,11 @@ jobs:
       - name: Build Docker Image from Source Code
         uses: docker/build-push-action@v2
         with:
+          file: devops/php-fpm/Dockerfile
+          target: dev
           build-args: |
             ARG_RUBY_VERSION=${{ env.RUBY_VERSION }}
           context: .
-          file: devops/php-fpm/Dockerfile
           tags: php-fpm:latest
           outputs: type=docker,dest=/tmp/php-fpm.tar
 
