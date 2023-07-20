@@ -45,10 +45,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: php-fpm
-          path: /tmp/php-fpm.tar
+          path: /tmp
 
       - name: Load docker image
-        run: docker load -i php-fpm.tar
+        run: docker load -i /tmp/php-fpm.tar
 
       - name: Run PHPUnit
         run: |
